@@ -1,0 +1,16 @@
+google:
+  login_url: https://www.google.com
+
+mysql:
+  host: localhost
+  port: 3306
+  user: user
+  password: User.5555
+  database: null
+
+ssh:
+  ssh_host: null
+  ssh_port: 22
+  ssh_user: null
+  ssh_key: /Users/null/.ssh/id_rsa
+  ssh_password: null
