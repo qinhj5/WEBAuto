@@ -3,10 +3,10 @@ import os
 import allure
 from typing import List
 from selenium import webdriver
-from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.remote.webelement import WebElement
 from utils import set_allure_and_console_output, logger, get_current_datetime
 
 
