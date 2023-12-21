@@ -22,10 +22,18 @@ class BasePage:
         Returns:
             None
         """
-        self.options = Options()
-        self.options.add_experimental_option('excludeSwitches', ['enable-automation', 'enable-logging'])
-        self.options.add_argument('--headless')
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=self.options)
+        options = Options()
+        options.add_experimental_option('excludeSwitches', ['enable-automation', 'enable-logging'])
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        
+        dev_tools = webdriver.Chrome(options=options)
+        dev_tools.get("about:blank")
+        page_height = dev_tools.execute_cdp_cmd("Page.getLayoutMetrics", {})["layoutViewport"]["clientHeight"]
+        page_width = dev_tools.execute_cdp_cmd("Page.getLayoutMetrics", {})["layoutViewport"]["clientWidth"]
+        options.add_argument(f"--window-size={page_width},{page_height}")
+        
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
         self.driver.get(url)
