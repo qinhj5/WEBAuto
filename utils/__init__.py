@@ -2,18 +2,19 @@
 import os
 import sys
 from utils.logger import logger
+from utils.decorators import singleton
 from utils.common import (get_env,
                           set_env,
                           get_conf,
-                          set_allure_and_console_output,
-                          get_current_datetime,
-                          is_json_string,
-                          loads_json_string,
-                          get_code_modifier,
+                          get_csv_data,
                           get_json_data,
-                          get_csv_data)
-from utils.decorators import singleton
-
+                          is_json_string,
+                          get_code_modifier,
+                          loads_json_string,
+                          set_assertion_error,
+                          get_current_datetime,
+                          set_allure_and_console_output,
+                          )
 
 # Path setup
 utils_dir = os.path.dirname(__file__)
