@@ -41,3 +41,4 @@ urllib3==1.26.10
 webdriver-manager==4.0.1
 wsproto==1.2.0
 zipp==3.15.0
+concurrent-log-handler==0.9.25
