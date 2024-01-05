@@ -4,7 +4,7 @@ from page.base_page import BasePage
 
 
 class GoogleLoginPage(BasePage):
-    login_entrance_button = ("xpath", """//span[@class="gb_Cd"]""")
+    login_entrance_button = ("xpath", """//span[@class="entrance"]""")
     email_input = ("xpath", """//input[@id="identifierId"]""")
     next_button = ("xpath", """//*[@id="identifierNext"]/div/button/span""")
     email_not_found_prompt = ("xpath", """//div[@class="prompt"]""")
