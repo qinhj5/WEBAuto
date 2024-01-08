@@ -4,8 +4,8 @@ from connection.mysql_connection import MysqlConnection
 
 
 class Constants:
-    GOOGLE_CONF = get_conf(name="google")
-    GOOGLE_LOGIN_URL = GOOGLE_CONF["login_url"]
+    _GOOGLE_CONF = get_conf(name="google")
+    GOOGLE_LOGIN_URL = _GOOGLE_CONF["login_url"]
 
 
 class Global:
