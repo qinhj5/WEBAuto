@@ -71,7 +71,6 @@ class EmailNotification:
         utils_dir = os.path.dirname(os.path.abspath(__file__))
         report_dir = os.path.abspath(os.path.join(utils_dir, "../report"))
         log_dir = os.path.abspath(os.path.join(utils_dir, "../log"))
-        screenshot_dir = os.path.abspath(os.path.join(utils_dir, "../screenshot"))
 
         msg = MIMEMultipart()
         now = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -85,9 +84,6 @@ class EmailNotification:
 
         EmailNotification._zip_file(log_dir, os.path.abspath(os.path.join(log_dir, "log.zip")))
         msg = EmailNotification._add_attachment(msg, log_dir)
-
-        EmailNotification._zip_file(screenshot_dir, os.path.abspath(os.path.join(screenshot_dir, "screenshot.zip")))
-        msg = EmailNotification._add_attachment(msg, screenshot_dir)
 
         for filename in os.listdir(log_dir):
             if filename == "summary_main.log":
@@ -103,5 +99,5 @@ class EmailNotification:
         smtp.quit()
 
 
-if __name__ == "__main__":
+def send_email():
     EmailNotification(**EMAIL_CONF).send_email()
