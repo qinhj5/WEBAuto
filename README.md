@@ -24,10 +24,54 @@
 
 <br>
 
-## 三、使用教程
-（Ubuntu 20.04 LTS x64, Python3.7）
+## 三、目录结构
+
+```
+WEBAuto/
+├── config/
+│   ├── __init__.py
+│   ├── conf.py
+│   └── conf_staging.yml
+├── data/
+│   └── account.json
+├── log/
+├── page/
+│   ├── __init__.py
+│   ├── base_page.py
+│   └── google_login
+│       ├── __init__.py
+│       └── google_login_page.py
+├── report/
+├── screenshot/
+├── testcases/
+│   ├── __init__.py
+│   └── google_login/
+│       ├── __init__.py
+│       ├── conftest.py
+│       └── test_google_login.py
+├── utils/
+│   ├── __init__.py
+│   ├── common.py
+│   ├── decorators.py
+│   ├── email_notification.py
+│   ├── enums.py
+│   ├── logger.py
+│   └── mysql_connection.py
+├── conftest.py
+├── Dockerfile
+├── Jenkinsfile
+├── main.py
+├── pytest.ini
+├── README.md
+├── report.sh
+└── requirements.txt
+```
 
 <br>
+
+## 四、使用教程
+（Ubuntu 20.04 LTS x64, Python3.7）
+
 
 ### 1.安装工具
 ```
