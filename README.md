@@ -72,7 +72,6 @@ WEBAuto/
 ## 四、使用教程
 （Ubuntu 20.04 LTS x64, Python3.7）
 
-
 ### 1.安装工具
 ```
   sudo apt update
